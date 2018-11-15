@@ -63,3 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #devise
 gem 'devise'
 gem 'omniauth-twitter'
+#bootstrap
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'

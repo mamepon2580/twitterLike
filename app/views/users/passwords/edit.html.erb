@@ -1,6 +1,7 @@
-<h1>Change your password</h1>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+<article>
+  <h1>Change your password</h1>
+  <div>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
@@ -22,4 +23,6 @@
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+  <%= render "users/shared/links" %>
+  </div>
+</article>

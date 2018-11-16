@@ -10,15 +10,33 @@
   </head>
 
   <body>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Twitter Like</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="/mypage/index">My Page</a>
+          <a class="nav-item nav-link active" href="#">Time Line</a>
+          <a class="nav-item nav-link active" href="#">Direct Message</a>
+          <a class="nav-item nav-link active" href="/info/index">All Users</a>
+          <a class="nav-item nav-link active" href="#">Follows</a>
+          <a class="nav-item nav-link active" href="#">Followers</a>
+          <a class="nav-item nav-link active" href="#">Setting</a>
+          <% if signed_in? %>
+            <div class="nav-item nav-link active">
+              <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+            </div>
+          <% end %>
+        <!-- ログアウトのリンク -->
+      </div>
+    </nav>
     <section class="mx-auto mt-5" style="width: 400px;">
       <div class="text-center" >
+
         <%= yield %>
-        <!-- ログアウトのリンク -->
-        <div class="session-control-box">
-          <% if signed_in? %>
-            <%= link_to 'sign out', destroy_user_session_path, method: :delete %>
-          <% end %>
-        </div>
         <!-- エラーメッセージタグのviewへの追加 -->
         <div class="notice">
           <%= notice %>

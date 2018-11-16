@@ -1,9 +1,15 @@
 <article>
-  <h1>Users</h1>
+  <div class="m-3">
+    <h1>Users</h1>
+  </div>
   <div>
-    <h5>id&nbsp;:&nbsp;name</h5>
+  <div class="m-3">
+    <div class="m-3">
+      <h5>id&nbsp;:&nbsp;name</h5>
+    </div>
+  </div>
     <% @users.each do |user| %>
-      <p><a href=""><%= user.id %>&nbsp;:&nbsp;<%= user.username %></a><a href=""></a></p>
+      <p><a href=""><%= user.id %> &nbsp; : &nbsp; <%= user.username %></a><a href=""></a></p>
     <% end %>
   </div>
 </article>

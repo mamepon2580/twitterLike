@@ -10,20 +10,22 @@
   </head>
 
   <body>
-    <section class="text-center mt-5">
-      <%= yield %>
-      <!-- ログアウトのリンク -->
-      <div class="session-control-box">
-        <% if signed_in? %>
-          <%= link_to 'sign out', destroy_user_session_path, method: :delete %>
-        <% end %>
-      </div>
-      <!-- エラーメッセージタグのviewへの追加 -->
-      <div class="notice">
-        <%= notice %>
-      </div>
-      <div class="alert">
-        <%= alert %>
+    <section class="mx-auto mt-5" style="width: 400px;">
+      <div class="text-center" >
+        <%= yield %>
+        <!-- ログアウトのリンク -->
+        <div class="session-control-box">
+          <% if signed_in? %>
+            <%= link_to 'sign out', destroy_user_session_path, method: :delete %>
+          <% end %>
+        </div>
+        <!-- エラーメッセージタグのviewへの追加 -->
+        <div class="notice">
+          <%= notice %>
+        </div>
+        <div class="alert">
+          <%= alert %>
+        </div>
       </div>
     </section>
   </body>

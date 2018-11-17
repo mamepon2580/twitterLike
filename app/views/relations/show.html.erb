@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Follow:</strong>
+  <%= @relation.follow_name %>
+</p>
+
+<p>
+  <strong>Follower:</strong>
+  <%= @relation.follower_name %>
+</p>
+
+<%= link_to 'Back', relations_path %>

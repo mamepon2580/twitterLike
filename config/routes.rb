@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :relations
   resources :tweets
   #routesを変更
   #devise_for :users
@@ -10,4 +11,5 @@ Rails.application.routes.draw do
   root to: 'static_pages#index'
   get 'mypage/index'
   get 'infos/index'
+  get 'timelines/index'
 end

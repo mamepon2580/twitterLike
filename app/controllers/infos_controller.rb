@@ -1,7 +1,9 @@
 class InfosController < ApplicationController
   before_action :authenticate_user!  #追加
-  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
   def index
-    @users = User.all
+    @relation = Relation.new
+    @not_follow_users = User.where(id:
+      Relation.where.not(follow_id: current_user.id)
+    )
   end
 end

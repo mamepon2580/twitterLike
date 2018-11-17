@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.where(user_id: current_user.id)
   end
 
   # GET /tweets/1
@@ -14,7 +14,6 @@ class TweetsController < ApplicationController
 
   # GET /tweets/new
   def new
-
     @tweet = Tweet.new
   end
 

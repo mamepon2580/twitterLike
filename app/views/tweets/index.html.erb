@@ -1,0 +1,34 @@
+<%= render 'head', tweet: @tweet %>
+<p id="notice"><%= notice %></p>
+
+<h5>Tweets</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>User name</th>
+      <th>Tweet time</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tweets.each do |tweet| %>
+      <tr>
+        <td><%= tweet.user_id %></td>
+        <td><%= tweet.user_name %></td>
+        <td><%= tweet.tweet_time %></td>
+        <td><%= tweet.content %></td>
+        <td><%= link_to 'Show', tweet %></td>
+        <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
+        <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tweet', new_tweet_path %>

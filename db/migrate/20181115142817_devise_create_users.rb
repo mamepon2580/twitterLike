@@ -5,7 +5,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       ## Database authenticatable
       ##userNameの追加
-      t.int    :id INTEGER PRIMARY KEY, null: false, default: ""
+      #t.int    :id INTEGER PRIMARY KEY, null: false, default: ""
       t.string :email,                  null: false, default: ""
       t.string :encrypted_password,     null: false, default: ""
 

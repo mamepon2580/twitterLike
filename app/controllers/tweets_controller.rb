@@ -14,11 +14,8 @@ class TweetsController < ApplicationController
 
   # GET /tweets/new
   def new
-    @tweet = Tweet.new
-  end
 
-  # GET /tweets/1/edit
-  def edit
+    @tweet = Tweet.new
   end
 
   # POST /tweets

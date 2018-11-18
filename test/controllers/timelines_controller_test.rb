@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TimelineControllerTest < ActionDispatch::IntegrationTest
+class TimelinesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

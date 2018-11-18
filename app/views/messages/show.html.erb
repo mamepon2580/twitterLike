@@ -1,33 +1,22 @@
 <%= render 'head', tweet: @tweet %>
-<p>
-  <strong>Send user:</strong>
-  <%= @message.send_user_id %>
-</p>
-
-<p>
-  <strong>Send user name:</strong>
-  <%= @message.send_user_name %>
-</p>
-
-<p>
-  <strong>Receive user:</strong>
-  <%= @message.receive_user_id %>
-</p>
-
-<p>
-  <strong>Receive user name:</strong>
-  <%= @message.receive_user_name %>
-</p>
-
-<p>
-  <strong>Message time:</strong>
-  <%= @message.message_time %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @message.content %>
-</p>
-
-<%= link_to 'Edit', edit_message_path(@message) %> |
-<%= link_to 'Back', messages_path %>
+<div class="m-3">
+  <h5>Your Profile</h5>
+</div>
+<div>
+  <p>
+    <strong>Send user name:</strong>
+    <%= @message.send_user_name %>
+  </p>
+  <p>
+    <strong>Receive user name:</strong>
+    <%= @message.receive_user_name %>
+  </p>
+  <p>
+    <strong>Message time:</strong>
+    <%= @message.message_time %>
+  </p>
+  <p>
+    <strong>Content:</strong>
+    <%= @message.content %>
+  </p>
+</div>

@@ -6,6 +6,7 @@
   <tbody>
     <% @favos.each do |favo| %>
       <tr>
+        <td><%= @tweets.find_by(id: favo.tweet_id).user_id  %></td>
         <td><%= @tweets.find_by(id: favo.tweet_id).user_name  %></td>
         <td><%= @tweets.find_by(id: favo.tweet_id).tweet_time  %></td>
         <td><%= link_to 'Destroy', favo, method: :delete, data: { confirm: 'Are you sure?' } %></td>

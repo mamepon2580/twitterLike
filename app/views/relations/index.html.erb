@@ -5,6 +5,7 @@
   <tbody>
     <% @relations_follow.each do |relation| %>
       <tr>
+        <td><%= relation.follower_id %></td>
         <td><%= relation.follower_name %></td>
         <td><%= link_to 'Destroy', relation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -18,6 +19,7 @@
   <tbody>
     <% @relations_follower.each do |relation| %>
       <tr>
+        <td><%= relation.follow_id %></td>
         <td><%= relation.follow_name %></td>
         <td><%= link_to 'Destroy', relation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

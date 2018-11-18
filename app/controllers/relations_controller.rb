@@ -4,8 +4,10 @@ class RelationsController < ApplicationController
   # GET /relations
   # GET /relations.json
   def index
-    @relations_follow = Relation.where(follow_id: current_user.id)
-    @relations_follower = Relation.where(follower_id: current_user.id)
+    @relations_follow = Relation
+      .where(follow_id: current_user.id)
+    @relations_follower = Relation
+      .where(follower_id: current_user.id)
   end
 
   # GET /relations/1

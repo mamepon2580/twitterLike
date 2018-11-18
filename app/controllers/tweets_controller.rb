@@ -6,6 +6,7 @@ class TweetsController < ApplicationController
   # GET /tweets.json
   def index
     @tweets = Tweet.where(user_id: current_user.id)
+    @favo_all = Favo.all
   end
 
   # GET /tweets/1

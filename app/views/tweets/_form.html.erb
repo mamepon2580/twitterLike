@@ -11,17 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
     <%= form.number_field :user_id,:value => current_user.id,readonly:true,hidden:true%>
-  </div>
-
-  <div class="field">
     <%= form.text_field :user_name,:value => current_user.username,readonly:true,hidden:true%>
-  </div>
-
-  <div class="field">
     <%= form.text_field :tweet_time,:value => DateTime.now ,readonly:true,hidden:true %>
-  </div>
+
 
   <div class="field">
     <p><%= form.label :content %></p>

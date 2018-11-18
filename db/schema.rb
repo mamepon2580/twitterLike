@@ -10,11 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_18_054119) do
+ActiveRecord::Schema.define(version: 2018_11_18_141858) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "test"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "favos", force: :cascade do |t|
     t.integer "user_id"
     t.integer "tweet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "send_user_id"
+    t.string "user_name"
+    t.integer "receive_user_id"
+    t.datetime "message_time"
+    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,6 +42,12 @@ ActiveRecord::Schema.define(version: 2018_11_18_054119) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_notes_on_user_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "test"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "relations", force: :cascade do |t|

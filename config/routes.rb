@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :favos
   resources :relations
   resources :tweets
+  resources :users
   #routesを変更
   #devise_for :users
  devise_for :users, controllers: {

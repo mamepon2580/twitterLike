@@ -1,4 +1,5 @@
 class FavosController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_favo, only: [:show, :edit, :update, :destroy]
 
   # GET /favos

@@ -1,5 +1,6 @@
 class InfosController < ApplicationController
   before_action :authenticate_user!
+  before_action :authenticate_user!
   def index
     @relation_new = Relation.new
     @not_follow_users =User

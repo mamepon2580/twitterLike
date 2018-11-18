@@ -10,14 +10,18 @@
       </ul>
     </div>
   <% end %>
-
   <%= form.text_field :send_user_id,:value => current_user.id,readonly:true,hidden:true%>
-  <%= form.text_field :user_name,:value => current_user.username,readonly:true,hidden:true%>
-  <%= form.text_field :message_time,:value => DateTime.now ,readonly:true,hidden:true %>
+  <%= form.text_field :send_user_name,:value => current_user.username,readonly:true,hidden:true%>
+  <%= form.text_field :tweet_time,:value => DateTime.now ,readonly:true,hidden:true %>
 
   <div class="field">
     <%= form.label :receive_user_id %>
     <%= form.number_field :receive_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :receive_user_name %>
+    <%= form.text_field :receive_user_name %>
   </div>
 
   <div class="field">

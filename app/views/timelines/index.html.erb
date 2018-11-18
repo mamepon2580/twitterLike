@@ -8,19 +8,19 @@
     <% @tweets.each do |tweet| %>
       <div>
         <div class="font-weight-bold">
-          <p><%= tweet.user_name  %> &nbsp; <span class="text-muted"><%= tweet.tweet_time %></span></p>
+          <p><%= tweet.user_name  %> &nbsp; <span class="text-muted"><%= tweet.tweet_time %> &nbsp; ☆<%= @favo_all.where(tweet_id: tweet.id).length %></span></p>
         </div>
         <div>
-        <p><%= tweet.content %>
+          <p><%= tweet.content %></p>
+        </div>
       </div>
+      <% if ! @user_favos.exists?(tweet_id: tweet.id) %>
         <%= form_with(model: @favo_new, local: true) do |form| %>
           <%= form.number_field :user_id,:value => current_user.id,readonly:true,hidden:true%>
           <%= form.number_field :tweet_id,:value => tweet.id,readonly:true,hidden:true%>
-          <div class="actions">
-            <%= form.submit %>
-          </div>
+          <%= form.submit %>
         <% end %>
       <% end %>
-    <br>
+    <% end %>
   </div>
 </article>

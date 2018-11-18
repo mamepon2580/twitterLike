@@ -7,6 +7,15 @@ class TimelinesController < ApplicationController
       .or(Tweet.where(user_id: current_user.id))
     @user_favos = Favo
       .where(user_id: current_user.id)
+      .select("tweet_id")
     @favo_new = Favo.new
+    @favo_all = Favo.all
+  end
+  def destroy
+    @favo.destroy
+    respond_to do |format|
+      format.html { redirect_to favos_url, notice: 'Favo was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 end

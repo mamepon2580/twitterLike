@@ -4,7 +4,8 @@ class FavosController < ApplicationController
   # GET /favos
   # GET /favos.json
   def index
-    @favos = Favo.all
+    @favos = Favo
+      .where(user_id:current_user.id)
     @tweets = Tweet.all
   end
 
@@ -17,8 +18,6 @@ class FavosController < ApplicationController
   def new
     @favo = Favo.new
   end
-
-  # GET /favos/1/edit
 
   # POST /favos
   # POST /favos.json

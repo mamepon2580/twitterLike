@@ -1,13 +1,12 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Messages</h1>
-
+<%= render 'head', tweet: @tweet %>
+<%= link_to 'New Message', new_message_path %>
 <table>
   <thead>
     <tr>
       <th>Send user</th>
-      <th>User name</th>
+      <th>Send user name</th>
       <th>Receive user</th>
+      <th>Receive user name</th>
       <th>Message time</th>
       <th>Content</th>
       <th colspan="3"></th>
@@ -18,8 +17,9 @@
     <% @messages.each do |message| %>
       <tr>
         <td><%= message.send_user_id %></td>
-        <td><%= message.user_name %></td>
+        <td><%= message.send_user_name %></td>
         <td><%= message.receive_user_id %></td>
+        <td><%= message.receive_user_name %></td>
         <td><%= message.message_time %></td>
         <td><%= message.content %></td>
         <td><%= link_to 'Show', message %></td>
@@ -29,7 +29,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Message', new_message_path %>

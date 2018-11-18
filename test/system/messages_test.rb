@@ -17,8 +17,9 @@ class MessagesTest < ApplicationSystemTestCase
     fill_in "Content", with: @message.content
     fill_in "Message Time", with: @message.message_time
     fill_in "Receive User", with: @message.receive_user_id
+    fill_in "Receive User Name", with: @message.receive_user_name
     fill_in "Send User", with: @message.send_user_id
-    fill_in "User Name", with: @message.user_name
+    fill_in "Send User Name", with: @message.send_user_name
     click_on "Create Message"
 
     assert_text "Message was successfully created"
@@ -32,8 +33,9 @@ class MessagesTest < ApplicationSystemTestCase
     fill_in "Content", with: @message.content
     fill_in "Message Time", with: @message.message_time
     fill_in "Receive User", with: @message.receive_user_id
+    fill_in "Receive User Name", with: @message.receive_user_name
     fill_in "Send User", with: @message.send_user_id
-    fill_in "User Name", with: @message.user_name
+    fill_in "Send User Name", with: @message.send_user_name
     click_on "Update Message"
 
     assert_text "Message was successfully updated"

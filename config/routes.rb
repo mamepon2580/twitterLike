@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :favos
   resources :relations
   resources :tweets
   #routesを変更

@@ -20,11 +20,11 @@
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="/mypage/index">My Page</a>
           <a class="nav-item nav-link active" href="#">Direct Message</a>
-          <a class="nav-item nav-link active" href=/tweets>My Tweet</a>
           <a class="nav-item nav-link active" href="/timelines/index">Time Line</a>
+          <a class="nav-item nav-link active" href=/tweets>Tweet</a>
           <a class="nav-item nav-link active" href="/infos/index">Not Follow Users</a>
           <a class="nav-item nav-link active" href="/relations">Relation</a>
-          <a class="nav-item nav-link active" href="#">Setting</a>
+          <a class="nav-item nav-link active" href="/favos">Favorite</a>
           <% if signed_in? %>
             <div class="nav-item nav-link active">
               <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>

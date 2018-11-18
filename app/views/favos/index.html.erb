@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My Favorite</h1>
+
+<table class="table table-sm table-bordered">
+  <tbody>
+    <% @favos.each do |favo| %>
+      <tr>
+      
+        <td><%= link_to 'Destroy', favo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

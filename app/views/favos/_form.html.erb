@@ -1,0 +1,27 @@
+<%= form_with(model: favo, local: true) do |form| %>
+  <% if favo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(favo.errors.count, "error") %> prohibited this favo from being saved:</h2>
+
+      <ul>
+      <% favo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tweet_id %>
+    <%= form.number_field :tweet_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

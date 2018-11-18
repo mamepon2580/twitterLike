@@ -13,7 +13,14 @@
         <div>
         <p><%= tweet.content %>
       </div>
-    <% end %>
+        <%= form_with(model: @favo_new, local: true) do |form| %>
+          <%= form.number_field :user_id,:value => current_user.id,readonly:true,hidden:true%>
+          <%= form.number_field :tweet_id,:value => tweet.id,readonly:true,hidden:true%>
+          <div class="actions">
+            <%= form.submit %>
+          </div>
+        <% end %>
+      <% end %>
     <br>
   </div>
 </article>

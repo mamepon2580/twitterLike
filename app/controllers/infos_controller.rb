@@ -1,8 +1,7 @@
 class InfosController < ApplicationController
-  before_action :authenticate_user!  #追加
+  before_action :authenticate_user!
   def index
     @relation_new = Relation.new
-    @relation_all = Relation.new
     @not_follow_users =User
     .where.not(id:current_user.id)
     .where.not(id:Relation

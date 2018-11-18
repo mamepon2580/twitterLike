@@ -10,7 +10,7 @@
   </div>
     <% @not_follow_users.each do |user| %>
       <p><%= user.username %></a></p>
-      <%= form_with(model: @relation, local: true) do |form| %>
+      <%= form_with(model: @relation_new, local: true) do |form| %>
         <%= form.text_field :follow_id,:value => current_user.id,readonly:true,hidden:true%>
         <%= form.text_field :follow_name,:value => current_user.username,readonly:true,hidden:true%>
         <%= form.text_field :follower_id,:value => user.id,readonly:true,hidden:true%>

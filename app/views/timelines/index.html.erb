@@ -1,14 +1,14 @@
+<p id="notice"><%= notice %></p>
 <article>
   <div class="m-3 border-bottom">
     <h1>Time Line</h1>
   </div>
-  <p id="notice"><%= notice %></p>
-  <h5>Follows Tweets</h5>
+  <p><%= link_to 'New Tweet', new_tweet_path %></p>
   <div>
-    <% @tweets.each do |tweet| %>
+    <% @tweets.reverse_each do |tweet| %>
       <div>
         <div class="font-weight-bold">
-          <p><%= tweet.user_name  %> &nbsp; <span class="text-muted"><%= tweet.tweet_time %> &nbsp; ☆<%= @favo_all.where(tweet_id: tweet.id).length %></span></p>
+          <p><%= tweet.user_name  %> &nbsp; <span class="text-muted"><%= tweet.tweet_time %> &nbsp; ♡<%= @favo_all.where(tweet_id: tweet.id).length %></span></p>
         </div>
         <div>
           <p><%= tweet.content %></p>

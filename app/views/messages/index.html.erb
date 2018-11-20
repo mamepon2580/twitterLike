@@ -1,12 +1,13 @@
 <%= render 'head', tweet: @tweet %>
 <%= link_to 'New Message', new_message_path %>
 <div class="m-3">
-  <h5>List</h5>
-</div>
-<div>
-  <% @messages.each do |message| %>
-      <p><%= message.send_user_name %> &nbsp; → &nbsp; <%= message.receive_user_name %></p>
-      <p><%= message.message_time %></p>
-      <p><%= message.content %> &nbsp; <%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <% @messages.reverse_each do |message| %>
+    <% if message.send_user_id == current_user.id %>
+      <p>To &nbsp; <%= message.receive_user_name %></p>
+    <% elsif message.receive_user_id == current_user.id %>
+      <p>From &nbsp; <%= message.send_user_name %></p>
+    <% end %>
+    <p><%= message.message_time %></p>
+    <p><%= message.content %></p>
   <% end %>
 </div>

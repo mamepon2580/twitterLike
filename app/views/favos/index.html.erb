@@ -1,15 +1,12 @@
 <p id="notice"><%= notice %></p>
-<div class="m-3 border-bottom">
-  <h1>My Favorite</h1>
-</div>
+<%= render 'head', favos: @favos %>
 
 <table class="table table-sm table-bordered">
   <tbody>
-    <% @favos.each do |favo| %>
+    <% @favos.reverse_each do |favo| %>
       <tr>
-        <td><%= @tweets.find_by(id: favo.tweet_id).user_id  %></td>
-        <td><%= @tweets.find_by(id: favo.tweet_id).user_name  %></td>
-        <td><%= @tweets.find_by(id: favo.tweet_id).tweet_time  %></td>
+        <td><%= @tweets.find_by(id: favo.tweet_id).user_name %></td>
+        <td><%= @tweets.find_by(id: favo.tweet_id).tweet_time %></td>
         <td><%= link_to 'Destroy', favo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

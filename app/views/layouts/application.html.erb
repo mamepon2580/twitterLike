@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Source</title>
+    <title>Twitter Like</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -18,19 +18,20 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="/mypage/index">My Page</a>
-          <a class="nav-item nav-link active" href="/messages">Direct Message</a>
-          <a class="nav-item nav-link active" href="/timelines/index">Time Line</a>
-          <a class="nav-item nav-link active" href=/tweets>My Tweet</a>
-          <a class="nav-item nav-link active" href="/infos/index">Not Follow Users</a>
-          <a class="nav-item nav-link active" href="/relations">Relation</a>
-          <a class="nav-item nav-link active" href="/favos">Favorite</a>
           <% if signed_in? %>
+            <a class="nav-item nav-link active" href="/mypage/index">My Page</a>
+            <a class="nav-item nav-link active" href="/messages">Message</a>
+            <a class="nav-item nav-link active" href="/timelines/index">Time Line</a>
+            <a class="nav-item nav-link active" href=/tweets>My Tweet</a>
+            <a class="nav-item nav-link active" href="/infos/index">Not Follow Users</a>
+            <a class="nav-item nav-link active" href="/follows/index">Follow</a>
+            <a class="nav-item nav-link active" href="/followers/index">Follower</a>
+            <a class="nav-item nav-link active" href="/favos">Favorite</a>
             <div class="nav-item nav-link active">
               <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
             </div>
           <% end %>
-        <!-- ログアウトのリンク -->
+        </div>
       </div>
     </nav>
     <section class="mx-auto mt-5" style="width: 400px;">

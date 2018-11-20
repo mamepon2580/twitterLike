@@ -3,11 +3,6 @@
     <h1>Not Follow Users</h1>
   </div>
   <div>
-  <div class="m-3">
-    <div class="m-3">
-      <h5>name</h5>
-    </div>
-  </div>
     <% @not_follow_users.each do |user| %>
       <p><%= user.username %></p>
       <%= form_with(model: @relation_new, local: true) do |form| %>

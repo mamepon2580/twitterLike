@@ -1,0 +1,12 @@
+<%= render 'head', tweet: @tweet %>
+
+<table class="table table-sm table-bordered">
+  <tbody>
+    <% @relations_follow.each do |relation| %>
+      <tr>
+        <td><%= relation.follower_name %></td>
+        <td><%= link_to 'Destroy', relation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

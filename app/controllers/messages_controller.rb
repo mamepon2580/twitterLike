@@ -6,8 +6,8 @@ class MessagesController < ApplicationController
   # GET /messages.json
   def index
     @messages = Message
-    .where(send_user_id: current_user.id)
-    .or(Message.where(receive_user_id: current_user.id))
+      .where(send_user_id: current_user.id)
+      .or(Message.where(receive_user_id: current_user.id))
   end
 
   # GET /messages/1
@@ -17,9 +17,8 @@ class MessagesController < ApplicationController
 
   # GET /messages/new
   def new
-    @message = Message.new
     @users = User.all
-
+    @message = Message.new
   end
 
   # GET /messages/1/edit

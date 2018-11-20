@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
-<div class="m-3 border-bottom">
-  <h1>My Favorite</h1>
-</div>
+<%= render 'head', tweet: @tweet %>
 <p>
   <strong>User:</strong>
   <%= @favo.user_id %>

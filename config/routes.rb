@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get 'mypage/index'
   get 'infos/index'
   get 'timelines/index'
+  get 'follows/index'
+  get 'followers/index'
 end

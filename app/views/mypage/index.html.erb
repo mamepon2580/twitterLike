@@ -4,14 +4,10 @@
   </div>
   <div>
     <div class="m-3">
-      <h5>Your Profile</h5>
-    </div>
-    <div>
-      <p>id &nbsp; : &nbsp; <%= current_user.id %></p>
-      <p>name &nbsp; : &nbsp; <%= current_user.username %></p>
+      <p><%= current_user.username %></p>
       <p><a href="/tweets"> tweet &nbsp; : &nbsp; <%= @tweets_num %></a></p>
-      <p><a href="/relations"> follow &nbsp; : &nbsp; <%= @follow_num %></a></p>
-      <p><a href="/relations"> follower &nbsp; : &nbsp; <%= @follower_num %></a></p>
+      <p><a href="/follows/index"> follow &nbsp; : &nbsp; <%= @follow_num %></a></p>
+      <p><a href="/followers/index"> follower &nbsp; : &nbsp; <%= @follower_num %></a></p>
     </div>
   </div>
 </article>

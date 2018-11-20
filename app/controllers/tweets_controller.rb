@@ -5,7 +5,8 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
-    @tweets = Tweet.where(user_id: current_user.id)
+    @tweets = Tweet
+      .where(user_id: current_user.id)
     @favo_all = Favo.all
   end
 

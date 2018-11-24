@@ -5,8 +5,13 @@
   <tbody>
     <% @favos.reverse_each do |favo| %>
       <tr>
-        <td><%= @tweets.find_by(id: favo.tweet_id).user_name %></td>
-        <td><%= @tweets.find_by(id: favo.tweet_id).tweet_time %></td>
+          <% if @tweets.exists?(id: favo.tweet_id) %>
+            <td><%= @tweets.find_by(id: favo.tweet_id).user_name %></td>
+            <td><%= @tweets.find_by(id: favo.tweet_id).tweet_time %></td>
+          <% elsif %>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          <% end %>
         <td><%= link_to 'Destroy', favo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
